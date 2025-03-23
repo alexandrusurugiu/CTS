@@ -118,29 +118,56 @@ public class FileReader {
 		return elevi;
 	}
 
-//	public static void readAll() {
-//		List<Elev> listaElevi;
-//		List<Student> listaStudenti;
-//		List<Angajat> listaAngajati;
-//
-//		try {
-//			System.out.println("----Outputurile din fisierele text----.");
-//
-//			listaElevi = FileReader.readPupil("Solid/elevi.txt");
-//
-//			for (int i = 0; i < listaElevi.size(); i++)
-//				System.out.println(listaElevi.get(i).toString());
-//
-//			listaStudenti = FileReader.readStudents("studenti.txt");
-//			for (int i = 0; i < listaStudenti.size(); i++)
-//				System.out.println(listaStudenti.get(i).toString());
-//
-//			listaAngajati = FileReader.readAngajati("angajati.txt");
-//			for (int i = 0; i < listaAngajati.size(); i++)
-//				System.out.println(listaAngajati.get(i).toString());
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//	}
+	public static void readAll() {
+		List<Elev> listaElevi;
+		List<Student> listaStudenti;
+		List<Angajat> listaAngajati;
+
+		try {
+			System.out.println("----Outputurile din fisierele text----.");
+
+			listaElevi = FileReader.readPupil("Solid/elevi.txt");
+
+			for (int i = 0; i < listaElevi.size(); i++)
+				System.out.println(listaElevi.get(i).toString());
+
+			listaStudenti = FileReader.readStudents("studenti.txt");
+			for (int i = 0; i < listaStudenti.size(); i++)
+				System.out.println(listaStudenti.get(i).toString());
+
+			listaAngajati = FileReader.readAngajati("angajati.txt");
+			for (int i = 0; i < listaAngajati.size(); i++)
+				System.out.println(listaAngajati.get(i).toString());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static List<ProiectInternational> readProjects(String file) throws FileNotFoundException, NumberFormatException {
+		Scanner input = new Scanner(new File(file));
+		input.useDelimiter("\\s*,\\s*");
+		List<ProiectInternational> proiecte = new ArrayList<>();
+
+		while (input.hasNextLine()) {
+			String line = input.nextLine().trim();
+			String[] tokens = line.split("\\s*,\\s*");
+
+			try {
+				String nume = tokens[0].trim();
+				String tara = tokens[1];
+				String tip = tokens[2];
+
+
+				ProiectInternational p = new ProiectInternational(nume, tara, tip);
+				proiecte.add(p);
+			} catch (Exception e) {
+				System.out.println("Eroare la citire: " + e.getMessage());
+				e.printStackTrace();
+			}
+		}
+
+		input.close();
+		return proiecte;
+	}
 
 }

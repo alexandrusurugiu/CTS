@@ -10,6 +10,7 @@ public class Program {
 	public static List<Angajat> angajati;
 	public static List<Elev> elevi;
     public static List<Student> studenti;
+    public static List<ProiectInternational> proiecte;
 
 	public static void main(String[] args) {
         try {
@@ -23,6 +24,9 @@ public class Program {
             System.out.println("\n------Studenti------\n");
             studenti = FileReader.readStudents("Solid/studenti.txt");
             studenti.stream().forEach(student -> System.out.println(student));
+            System.out.println("\n------Proiecte------\n");
+            proiecte = FileReader.readProjects("Solid/proiecte.txt");
+            proiecte.stream().forEach(proiectInternational -> System.out.println(proiectInternational));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -35,7 +39,6 @@ public class Program {
         elevi.forEach(Finantare::finantareElev);
         System.out.println("\n------Studenti------\n");
         studenti.forEach(Finantare::finantareStudent);
-
     }
 
 }
