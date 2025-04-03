@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Program {
 
-	public static List<Angajat> angajati;
-	public static List<Elev> elevi;
-    public static List<Student> studenti;
-    public static List<ProiectInternational> proiecte;
+	private static List<Angajat> angajati;
+    private static List<Elev> elevi;
+    private static List<Student> studenti;
+    private static List<ProiectInternational> proiecte;
 
 	public static void main(String[] args) {
         try {

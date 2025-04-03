@@ -1,0 +1,7 @@
+Clasament punctaje:
+Punctaj: 11 -> Poziție: 1
+Punctaj: 10 -> Poziție: 2
+Punctaj: 9 -> Poziție: 3
+Punctaj: 3 -> Poziție: 4
+Punctaj: 2 -> Poziție: 5
+Punctaj: 1 -> Poziție: 6

@@ -33,7 +33,7 @@ abstract class Aplicant{
 		this.varsta = varsta;
 	}
 
-	public void statut(){
+	public void statut() {
 		if(punctaj>80)
 			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
 		else
