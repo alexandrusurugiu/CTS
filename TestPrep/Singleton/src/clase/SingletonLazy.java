@@ -1,8 +1,17 @@
 package clase;
 
-public class Ospatar {
+public class SingletonLazy {
+    public static SingletonLazy instance;
     private int id;
     private String name;
+
+    public static SingletonLazy getInstance() {
+        if (instance == null) {
+            instance = new SingletonLazy();
+        }
+
+        return instance;
+    }
 
     public int getId() {
         return id;
@@ -20,14 +29,12 @@ public class Ospatar {
         this.name = name;
     }
 
-    public Ospatar(int id, String name) {
-        this.id = id;
-        this.name = name;
+    private SingletonLazy() {
     }
 
     @Override
     public String toString() {
-        return "Ospatar{" +
+        return "SingletonLazy{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
