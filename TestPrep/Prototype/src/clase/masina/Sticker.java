@@ -1,4 +1,4 @@
-package clase;
+package clase.masina;
 
 public class Sticker implements Cloneable{
     private int dimensiune;

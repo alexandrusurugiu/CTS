@@ -1,4 +1,4 @@
-package clase;
+package clase.masina;
 
 import java.util.HashMap;
 import java.util.Map;

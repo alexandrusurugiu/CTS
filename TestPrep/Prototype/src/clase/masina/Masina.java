@@ -1,4 +1,4 @@
-package clase;
+package clase.masina;
 
 public class Masina implements IMasina {
     private String modelMasina;

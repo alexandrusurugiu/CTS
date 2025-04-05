@@ -1,4 +1,4 @@
-package clase;
+package clase.masina;
 
 public interface IMasina {
     String getModelMasina();

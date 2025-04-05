@@ -1,9 +1,9 @@
 package test;
 
-import clase.Masina;
-import clase.PrototypeFactory;
+import clase.masina.Masina;
+import clase.masina.PrototypeFactory;
 
-public class Main {
+public class MasinaMain {
     public static void main(String[] args) throws CloneNotSupportedException {
         PrototypeFactory factory = PrototypeFactory.getInstance();
         PrototypeFactory factory2 = PrototypeFactory.getInstance();
