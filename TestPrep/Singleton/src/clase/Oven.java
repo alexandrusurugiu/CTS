@@ -32,6 +32,14 @@ public class Oven {
         return registry.get(id);
     }
 
+    public static int getRegistrySize() {
+        return registry.size();
+    }
+
+    public static boolean ovenExists(int id) {
+        return id >= 0 && id < registry.size();
+    }
+
     public int calculateOvenWaitingTime() {
         int totalWaitingTime = 0;
         for (Dish dish : this.preparationQueue) {
