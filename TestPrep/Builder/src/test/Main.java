@@ -3,7 +3,7 @@ package test;
 import clase.Magazin;
 import clase.MagazinBuilder;
 
-public class MagazinMain {
+public class Main {
     public static void main(String[] args) {
         MagazinBuilder builder = new MagazinBuilder("MegaMall", 200);
 
