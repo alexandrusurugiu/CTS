@@ -1,9 +1,9 @@
 package test;
 
-import clase.Magazin;
-import clase.MagazinBuilder;
+import clase.magazin.Magazin;
+import clase.magazin.MagazinBuilder;
 
-public class Main {
+public class MagazinMain {
     public static void main(String[] args) {
         MagazinBuilder builder = new MagazinBuilder("MegaMall", 200);
 

@@ -1,4 +1,4 @@
-package clase;
+package clase.magazin;
 
 import java.util.List;
 
