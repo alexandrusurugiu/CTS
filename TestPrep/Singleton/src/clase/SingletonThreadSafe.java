@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SingletonThreadSafe {
-    public static volatile SingletonThreadSafe instance;
+    private static volatile SingletonThreadSafe instance;
     private int id;
     private List<Integer> note;
 
@@ -24,12 +24,14 @@ public class SingletonThreadSafe {
         this.note.add(note);
     }
 
-    private SingletonThreadSafe(int id) {
+    private SingletonThreadSafe(int id) throws InterruptedException {
+        System.out.println("SingletonThreadSafe constructor");
+        Thread.sleep(1000);
         this.id = id;
         note = new ArrayList<Integer>();
     }
 
-    public static synchronized SingletonThreadSafe getInstance() {
+    public static synchronized SingletonThreadSafe getInstance() throws InterruptedException {
         if (instance == null) {
             instance = new SingletonThreadSafe(1);
         }
