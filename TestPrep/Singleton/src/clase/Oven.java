@@ -10,12 +10,14 @@ public class Oven {
 //    private static Map<Integer, Oven> registry = new HashMap<>();
 
     private static final int MAX_OVENS = 4;
+    private static int nextId = 0;
     private int id;
     private List<Dish> preparationQueue;
     private int maximumGrades;
 
     private Oven(int maximumGrades) {
-        preparationQueue = new ArrayList<>();
+        this.id = nextId++;
+        this.preparationQueue = new ArrayList<>();
         this.maximumGrades = maximumGrades;
     }
 
@@ -29,47 +31,45 @@ public class Oven {
     }
 
     public static Oven getOvenById(int id) {
-        return registry.get(id);
+        if (id >= 0 && id < registry.size()) {
+            return registry.get(id);
+        }
+        throw new RuntimeException("Oven with ID " + id + " not found");
+    }
+
+    public int calculateOvenWaitingTime() {
+        return preparationQueue.stream()
+                .mapToInt(Dish::getCookingTime)
+                .sum();
+    }
+
+    public static void addDish(Dish dish) {
+        PriorityQueue<Oven> ovensPQ = new PriorityQueue<>(
+                Comparator.comparingInt(Oven::calculateOvenWaitingTime));
+
+        registry.stream()
+                .filter(oven -> oven.maximumGrades >= dish.getCookingGrades())
+                .forEach(ovensPQ::offer);
+
+        if (ovensPQ.isEmpty()) {
+            throw new RuntimeException("No oven available for this dish: " + dish.getName() +
+                    ". Required temperature: " + dish.getCookingGrades());
+        }
+
+        Oven bestOven = ovensPQ.poll();
+        bestOven.preparationQueue.add(dish);
     }
 
     public static int getRegistrySize() {
         return registry.size();
     }
 
-    public static boolean ovenExists(int id) {
-        return id >= 0 && id < registry.size();
-    }
-
-    public int calculateOvenWaitingTime() {
-        int totalWaitingTime = 0;
-        for (Dish dish : this.preparationQueue) {
-            totalWaitingTime += dish.getCookingTime();
-        }
-        return totalWaitingTime;
-    }
-
-    public static void addDish(Dish dish) throws RuntimeException{
-        PriorityQueue<Oven> ovensPQ = new PriorityQueue<>(Comparator.comparingInt(Oven::calculateOvenWaitingTime));
-
-        while (!ovensPQ.isEmpty()) {
-            Oven oven = ovensPQ.poll();
-
-            if (dish.getCookingGrades() <= oven.maximumGrades) {
-                oven.preparationQueue.add(dish);
-                return;
-            }
-        }
-
-        throw new RuntimeException("No oven available for this dish: " + dish.getName());
-    }
-
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Oven{");
-        sb.append("id=").append(id);
-        sb.append(", preparationQueue=").append(preparationQueue);
-        sb.append(", maximumGrades=").append(maximumGrades);
-        sb.append('}');
-        return sb.toString();
+        return "Oven{" +
+                "id=" + id +
+                ", preparationQueue=" + preparationQueue +
+                ", maximumGrades=" + maximumGrades +
+                '}';
     }
 }
