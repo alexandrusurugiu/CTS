@@ -1,9 +1,9 @@
 package test;
 
-import clase.AtacantFactory;
-import clase.FundasFactory;
-import clase.IFactory;
-import clase.Jucator;
+import clase.jucator.AtacantFactory;
+import clase.jucator.FundasFactory;
+import clase.jucator.IFactory;
+import clase.jucator.Jucator;
 
 public class Main {
     public static void main(String[] args) throws CloneNotSupportedException {

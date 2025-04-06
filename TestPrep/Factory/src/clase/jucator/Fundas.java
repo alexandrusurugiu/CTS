@@ -1,4 +1,4 @@
-package clase;
+package clase.jucator;
 
 import java.util.List;
 
