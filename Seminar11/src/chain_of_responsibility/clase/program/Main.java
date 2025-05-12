@@ -1,6 +1,7 @@
-package program;
+package chain_of_responsibility.clase.program;
 
-import clase.*;
+import chain_of_responsibility.clase.*;
+import strategy.StrategyGDPR;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,7 @@ public class Main {
         admitere.addCandidat(new Candidat("Maria Ionescu", 4.5f, 8.0f, "Eseu despre natura"));
         admitere.addCandidat(new Candidat("Andrei Georgescu", 6.5f, 7.0f, "Eseu despre tehnologie"));
         admitere.addCandidat(new Candidat("Elena Vasilescu", 9.5f, 10.0f, "Eseu despre arta"));
+        admitere.setStrategie(new StrategyGDPR());
         admitere.startAdmitere();
 
         //Tema pentru saptamana viitoare

@@ -1,4 +1,4 @@
-package clase;
+package chain_of_responsibility.clase;
 
 import java.util.HashMap;
 import java.util.Map;

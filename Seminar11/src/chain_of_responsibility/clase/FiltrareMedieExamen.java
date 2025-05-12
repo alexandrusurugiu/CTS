@@ -1,21 +1,20 @@
-package clase;
+package chain_of_responsibility.clase;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FiltrareEseu extends Filtrare {
-
+public class FiltrareMedieExamen extends Filtrare{
     @Override
     public List<Candidat> filter(List<Candidat> lista) {
-        //se accepta doar candidatii cu eseul de lungime para
+        //se accepta doar candidatii cu medie examen mai mare de 7
         List<Candidat> candidatiFiltrati = new ArrayList<>();
         for (Candidat c : lista) {
-            if (c.getEseu().length() % 2 == 0) {
+            if (c.getMedieExamen() > 8) {
                 candidatiFiltrati.add(c);
             }
         }
 
-        System.out.println("S-a filtrat dupa eseu. Au ramas " + candidatiFiltrati.size() + " candidati.");
+        System.out.println("S-a filtrat dupa medie examen. Au ramas " + candidatiFiltrati.size() + " candidati.");
         if (this.nextHandler != null) {
             return nextHandler.filter(candidatiFiltrati);
         } else {

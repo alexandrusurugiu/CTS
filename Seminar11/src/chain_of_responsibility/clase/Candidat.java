@@ -1,4 +1,4 @@
-package clase;
+package chain_of_responsibility.clase;
 
 public class Candidat {
     private String name;
