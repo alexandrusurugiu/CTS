@@ -9,5 +9,7 @@ public abstract class Filtrare {
         this.nextHandler = nextHandler;
     }
 
-    public abstract List<Candidat> filter(List<Candidat> lista);
+//    public abstract List<Candidat> filter(List<Candidat> lista);
+
+    public abstract void filter(List<Candidat> lista);
 }

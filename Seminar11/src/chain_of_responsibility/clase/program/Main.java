@@ -28,18 +28,34 @@ public class Main {
 //
 //        System.out.println(listaFinala);
 
+        //Pentru filtrarea pe lista noua
+//        System.out.println("----------Folosim Facade----------");
+//        Admitere admitere = new Admitere(filtrareEseu, filtrareMedieBAC, filtrareMedieExamen);
+//        admitere.addCandidat(new Candidat("Ion Popescu", 8.5f, 9.0f, "Eseu despre viata"));
+//        admitere.addCandidat(new Candidat("Maria Ionescu", 4.5f, 8.0f, "Eseu despre natura"));
+//        admitere.addCandidat(new Candidat("Andrei Georgescu", 6.5f, 7.0f, "Eseu despre tehnologie"));
+//        admitere.addCandidat(new Candidat("Elena Vasilescu", 9.5f, 10.0f, "Eseu despre arta"));
+//        admitere.setStrategie(new StrategyGDPR());
+//        admitere.startAdmitere();
+
+        //Tema pentru saptamana viitoare
+        //1. Modificare pe listrare (fara return, practic sa modificam direct lista)
+        //2. Exemplul cu Banca (metoda abstracta intoarce bool)
+        //3. Exemplul Load Page
+
+
+
+        //1. Filtrare pe lista intiala
         System.out.println("----------Folosim Facade----------");
         Admitere admitere = new Admitere(filtrareEseu, filtrareMedieBAC, filtrareMedieExamen);
         admitere.addCandidat(new Candidat("Ion Popescu", 8.5f, 9.0f, "Eseu despre viata"));
         admitere.addCandidat(new Candidat("Maria Ionescu", 4.5f, 8.0f, "Eseu despre natura"));
         admitere.addCandidat(new Candidat("Andrei Georgescu", 6.5f, 7.0f, "Eseu despre tehnologie"));
         admitere.addCandidat(new Candidat("Elena Vasilescu", 9.5f, 10.0f, "Eseu despre arta"));
+
+        System.out.println("Lista INITIALA: " + admitere.candidati);
         admitere.setStrategie(new StrategyGDPR());
         admitere.startAdmitere();
-
-        //Tema pentru saptamana viitoare
-        //1. Modificare pe listrare (fara return, practic sa modificam direct lista)
-        //2. Exemplul cu Banca (metoda abstracta intoarce bool)
-        //3. Exemplul Load Page
+        System.out.println("Lista FINALA: " + admitere.candidati);
     }
 }
