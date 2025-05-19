@@ -1,4 +1,4 @@
-package chain_of_responsibility.clase.program;
+package chain_of_responsibility.program;
 
 import chain_of_responsibility.clase.*;
 import strategy.StrategyGDPR;
