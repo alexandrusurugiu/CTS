@@ -10,6 +10,10 @@ public class CreditScoreHandler extends LoanHandler {
             return false;
         }
         System.out.println("Scor de credit OK pentru " + application.getApplicantName());
-        return nextHandler == null || nextHandler.isEligible(application);
+
+        if (nextHandler == null)
+            return true;
+        else
+            return nextHandler.isEligible(application);
     }
 }

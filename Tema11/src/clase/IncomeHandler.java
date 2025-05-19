@@ -10,6 +10,10 @@ public class IncomeHandler extends LoanHandler {
             return false;
         }
         System.out.println("Venit OK pentru " + application.getApplicantName());
-        return nextHandler == null || nextHandler.isEligible(application);
+
+        if (nextHandler == null)
+            return true;
+        else
+            return nextHandler.isEligible(application);
     }
 }
