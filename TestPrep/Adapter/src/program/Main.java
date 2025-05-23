@@ -1,10 +1,12 @@
 package program;
 
 import clase.client.*;
+import clase.export.*;
 import clase.schimb_valutar.*;
 
 public class Main {
     public static void main(String[] args) {
+        //Firma
         IEvaluareClientFirmaA evaluareA = new EvaluareClientFirmaA();
         evaluareA.analizaClientFirmaA(2500);
 
@@ -29,5 +31,18 @@ public class Main {
 
         IOldPaymentSystem oldPaymentSystem2 = new AdapterPayment();
         oldPaymentSystem2.payInUSD(2500);
+
+
+
+        //Document
+        ILegacyDocumentManager legacyDocument = new LegacyDocumentManager();
+        legacyDocument.printPlainText("Legacy document text");
+
+        IModernDocumentManager modernDocument = new ModernDocumentManager();
+        modernDocument.exportAsHTML("HTML modern document");
+        modernDocument.exportAsJSON("JSON modern document");
+
+        ILegacyDocumentManager adapterDocument = new AdapterDocument();
+        adapterDocument.printPlainText("Legacy adapter document");
     }
 }
