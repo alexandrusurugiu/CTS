@@ -1,11 +1,11 @@
 package clase;
 
 public class Bank {
-    BaseHandler juniorManagerHandler;
-    BaseHandler seniorManagerHandler;
-    BaseHandler directorHandler;
+    BaseManagerHandler juniorManagerHandler;
+    BaseManagerHandler seniorManagerHandler;
+    BaseManagerHandler directorHandler;
 
-    public Bank(BaseHandler juniorManagerHandler, BaseHandler seniorManagerHandler, BaseHandler directorHandler) {
+    public Bank(BaseManagerHandler juniorManagerHandler, BaseManagerHandler seniorManagerHandler, BaseManagerHandler directorHandler) {
         this.juniorManagerHandler = juniorManagerHandler;
         this.seniorManagerHandler = seniorManagerHandler;
         this.directorHandler = directorHandler;

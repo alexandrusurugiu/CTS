@@ -4,9 +4,9 @@ import clase.*;
 
 public class Main {
     public static void main(String[] args) {
-        BaseHandler juniorManager = new JuniorManagerHandler();
-        BaseHandler seniorManager = new SeniorManagerHandler();
-        BaseHandler director = new DirectorHandler();
+        BaseManagerHandler juniorManager = new JuniorManagerManagerHandler();
+        BaseManagerHandler seniorManager = new SeniorManagerManagerHandler();
+        BaseManagerHandler director = new DirectorManagerHandler();
 
         Bank bank = new Bank(juniorManager, seniorManager, director);
 

@@ -1,6 +1,6 @@
 package clase;
 
-public class JuniorManagerHandler extends BaseHandler {
+public class JuniorManagerManagerHandler extends BaseManagerHandler {
     @Override
     public void handleRequest(Request request) {
         if (request.getAmount() <= 1000) {
