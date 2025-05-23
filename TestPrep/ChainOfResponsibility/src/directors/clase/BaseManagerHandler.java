@@ -1,4 +1,4 @@
-package clase;
+package directors.clase;
 
 public abstract class BaseManagerHandler implements ManagerHandler {
     private ManagerHandler managerHandler;

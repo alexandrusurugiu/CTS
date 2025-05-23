@@ -1,4 +1,4 @@
-package clase;
+package directors.clase;
 
 public interface ManagerHandler {
     void setNextHandler(ManagerHandler nextManagerHandler);

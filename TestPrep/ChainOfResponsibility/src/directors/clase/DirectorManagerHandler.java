@@ -1,4 +1,4 @@
-package clase;
+package directors.clase;
 
 public class DirectorManagerHandler extends BaseManagerHandler {
     @Override

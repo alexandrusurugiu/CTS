@@ -1,6 +1,6 @@
-package program;
+package directors.program;
 
-import clase.*;
+import directors.clase.*;
 
 public class Main {
     public static void main(String[] args) {
